@@ -16,11 +16,12 @@ export function Form({ setTarefas }: Iprops) {
     e.preventDefault();
 
     //novo objeto pra poder por na lista Itarefa
-    const NovaTarefa: Itarefa = { nometarefa: nomeTarefa };
+    if (nomeTarefa) {
+      const NovaTarefa: Itarefa = { nometarefa: nomeTarefa };
 
-    //pega os obj que ja estao e concatena com o novo obj
-    setTarefas((prevTarefas) => [...prevTarefas, NovaTarefa]);
-
+      //pega os obj que ja estao e concatena com o novo obj
+      setTarefas((prevTarefas) => [...prevTarefas, NovaTarefa]);
+    }
     setNomeTarefa("");
   };
   return (
@@ -43,6 +44,7 @@ export function Form({ setTarefas }: Iprops) {
           placeholder="Nome da tarefa..."
           value={nomeTarefa}
           onChange={handleNomeTarefa}
+          required
           className=" border-b-[1px] border-gray-500 outline-none md:flex-1"
         />
       </div>

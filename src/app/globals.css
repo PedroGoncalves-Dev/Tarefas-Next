@@ -30,5 +30,7 @@ body {
 }
 
 main {
-  height: 90vh;
+  min-height: 90vh;
+  height: auto;
+  padding: 30px 0;
 }

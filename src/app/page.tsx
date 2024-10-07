@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export interface Itarefa {
+  idTarefa: number;
   nometarefa: string;
 }
 

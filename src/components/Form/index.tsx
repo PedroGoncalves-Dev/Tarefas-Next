@@ -17,7 +17,9 @@ export function Form({ setTarefas }: Iprops) {
 
     //novo objeto pra poder por na lista Itarefa
     if (nomeTarefa) {
-      const NovaTarefa: Itarefa = { nometarefa: nomeTarefa };
+      const novoId = Math.floor(Math.random() * 100);
+
+      const NovaTarefa: Itarefa = { idTarefa: novoId, nometarefa: nomeTarefa };
 
       //pega os obj que ja estao e concatena com o novo obj
       setTarefas((prevTarefas) => [...prevTarefas, NovaTarefa]);

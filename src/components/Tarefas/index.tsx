@@ -1,5 +1,6 @@
 import { Itarefa } from "@/app/page";
 import { useEffect, useRef } from "react";
+import { RiDeleteBack2Line } from "react-icons/ri";
 
 interface Iprops {
   tarefas: Itarefa[];
@@ -22,9 +23,18 @@ export function Tarefas({ tarefas }: Iprops) {
     >
       {tarefas.length > 0 ? (
         tarefas.map((task) => (
-          <h3 className="border-b-[1px]" ref={ultimoItem}>
-            {task.nometarefa}
-          </h3>
+          <div
+            key={task.idTarefa}
+            className="flex flex-row items-center justify-between  border-b-[1px]"
+          >
+            <h3 ref={ultimoItem}>
+              id: {task.idTarefa} {task.nometarefa}
+            </h3>
+
+            <div className="transition ease-in duration-150 hover:scale-110 cursor-pointer">
+              <RiDeleteBack2Line color="blue" />
+            </div>
+          </div>
         ))
       ) : (
         <h3>Nenhuma tarefas adicionada</h3>

@@ -1,12 +1,13 @@
 import { Itarefa } from "@/app/page";
-import { useEffect, useRef } from "react";
+import { SetStateAction, useEffect, useRef } from "react";
 import { RiDeleteBack2Line } from "react-icons/ri";
 
 interface Iprops {
   tarefas: Itarefa[];
+  setTarefa: React.Dispatch<SetStateAction<Itarefa[]>>;
 }
 
-export function Tarefas({ tarefas }: Iprops) {
+export function Tarefas({ tarefas, setTarefa }: Iprops) {
   const ultimoItem = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -14,6 +15,12 @@ export function Tarefas({ tarefas }: Iprops) {
       ultimoItem.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [tarefas]);
+
+  const DeletarTarefa = (id: number) => {
+    setTarefa((prevTarefas) =>
+      prevTarefas.filter((tarefa) => tarefa.idTarefa !== id)
+    );
+  };
   return (
     <section
       className="bg-white w-2/3 py-6  rounded-xl my-7 grid gap-y-3 
@@ -31,7 +38,11 @@ export function Tarefas({ tarefas }: Iprops) {
               id: {task.idTarefa} {task.nometarefa}
             </h3>
 
-            <div className="transition ease-in duration-150 hover:scale-110 cursor-pointer">
+            <div
+              className="transition ease-in duration-150 hover:scale-110 
+            cursor-pointer"
+              onClick={() => DeletarTarefa(task.idTarefa)}
+            >
               <RiDeleteBack2Line color="blue" />
             </div>
           </div>

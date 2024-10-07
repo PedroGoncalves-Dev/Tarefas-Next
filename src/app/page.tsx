@@ -15,7 +15,7 @@ export default function Home() {
     <main className="flex flex-col justify-center items-center">
       <Form setTarefas={setTarefas} />
 
-      <Tarefas tarefas={tarefas} />
+      <Tarefas tarefas={tarefas} setTarefa={setTarefas} />
     </main>
   );
 }

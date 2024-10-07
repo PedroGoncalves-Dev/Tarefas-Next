@@ -1,7 +1,7 @@
 "use client";
 import { Form } from "@/components/Form";
 import { Tarefas } from "@/components/Tarefas";
-import Image from "next/image";
+
 import { useState } from "react";
 
 export interface Itarefa {

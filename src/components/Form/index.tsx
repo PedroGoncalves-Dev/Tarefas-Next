@@ -30,12 +30,12 @@ export function Form({ setTarefas }: Iprops) {
     <form
       className="bg-white w-2/3 h-52 rounded-xl shadow-lg flex flex-col
        justify-around items-center 
-       md:w-2/5 md:flex-row"
+       md:w-2/5 md:flex-row animate-fade animate-once"
       onSubmit={hanldeSubmit}
     >
       <div
         className="flex flex-col w-4/5
-      md:flex-row md:items-center  "
+      md:flex-row md:items-center"
       >
         <label htmlFor="tarefa" className="mb-3 md:mr-2 md:mb-0 lg:text-2xl">
           Tarefa:
@@ -53,7 +53,7 @@ export function Form({ setTarefas }: Iprops) {
 
       <button
         type="submit"
-        className="bg-blue-700 w-1/2 h-8 flex justify-center items-center rounded-lg
+        className=" bg-blue-700 w-1/2 h-8 flex justify-center items-center rounded-lg
          transition ease-in duration-150 hover:scale-105 
          md:w-10 "
       >

@@ -28,9 +28,9 @@ export function Form({ setTarefas }: Iprops) {
   };
   return (
     <form
-      className="bg-white w-2/3 h-52 rounded-xl shadow-lg flex flex-col
+      className="bg-white animate-fade-down animate-once animate-ease-in-out w-2/3 h-52 rounded-xl shadow-lg flex flex-col
        justify-around items-center 
-       md:w-2/5 md:flex-row animate-fade animate-once"
+       md:w-2/5 md:flex-row"
       onSubmit={hanldeSubmit}
     >
       <div
